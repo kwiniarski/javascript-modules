@@ -1,394 +1,708 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+    <title>JavaScript Modules - Working With Big JavaScript Projects - by Krzysztof Winiarski</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="Presentation about modules in JavaScript">
+    <meta name="author" content="Krzysztof Winiarski">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+     <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
       }
-    }
+    </script>
+
+    <!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+
+      <div class="slides">
+        <section>
+          <h1>JavaScript modules</h1>
+          <h3>Working with big JavaScript projects</h3>
+          <p>
+            <small>by <a href="mailto:krzysztof.winiarski@esky.com">Krzysztof Winiarski</a></small>
+          </p>
+        </section>
+        
+        <!-- -------------------------------- TOC -------------------------------- -->
+
+        <section>
+          <h2>Big project, big problems</h2>
+          <ul>
+            <li class="fragment">hard to read</li>
+            <li class="fragment">hard to test</li>
+            <li class="fragment">hard to maintain</li>
+          </ul>
+          <aside class="notes">
+            <b>hard to read</b><br>
+            Code is for humans, for machines only to execute. Style guide will help others to read.
+            <b>hard to maintain</b><br>
+            Code duplication, no portability, global namespace pollution...
+            <b>hard to test</b><br>
+            as a consequence all above...
+          </aside>
+        </section>
+        <section>
+          <h2>Any suggestions how to improve?</h2>
+          <ul>
+            <li class="fragment">Standards</li>
+            <li class="fragment">Modules</li>
+            <li class="fragment">Automation</li>
+          </ul>
+          <aside class="notes">Modules as one of many good programing practices.</aside>
+        </section>
+        
+        <!-- -------------------------------- STYLE -------------------------------- -->
+        
+        <section>
+          <section>
+            <h5>Part I</h5>
+            <h1>Standards</h1>
+            <p><em>Improving maintainability with style guidelines</em></p>
+          </section>
+            <section>
+                <h2>Do we need standards?</h2>
+                <img src="img/standards.gif" class="fragment">
+            </section>
+          <section>
+            <h2>Principles of maintainability</h2>
+            <p class="fragment">Maintainable code is:</p>
+            <ul>
+              <li class="fragment">readable</li>
+              <li class="fragment">consistent</li>
+              <li class="fragment">predictable</li>
+              <li class="fragment">documented</li>
+              <li class="fragment">testable</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Readable code</h3>
+            <ul>
+              <li class="fragment">
+                coding conventions
+                <ul style="font-size: 70%">
+                  <li class="fragment">indention levels</li>
+                  <li class="fragment">statement termination</li>
+                  <li class="fragment">line length</li>
+                  <li class="fragment">line braking</li>
+                  <li class="fragment">blank lines</li>
+                  <li class="fragment">curly braces</li>
+                </ul>
+              </li>
+              <li class="fragment">
+                naming conventions
+                <ul style="font-size: 70%">
+                  <li class="fragment">variablesAndFunctions</li>
+                  <li class="fragment">CONSTANTS</li>
+                  <li class="fragment">Constructors</li>
+                  <li class="fragment">_otherConventions</li>
+                  <li class="fragment">$jQueryCollection</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Consistent code</h3>
+            <p>When you establish coding and naming conventions<br><b>stick to them!</b></p>
+            <p class="fragment">Ideally code should look as if it was written by the same person.</p>
+          </section>
+          <section>
+            <h3>Predictable code</h3>
+            <p class="fragment">Avoid complexity and stick to the programing principles</p>
+            <p class="fragment"><small>KISS, DRY, YAGNI, loose coupling, separation of concerns, open/closed, single responsibility, IoC</small></p>
+            <p class="fragment">In JavaScript you have to think asynchronous</p>
+            <p class="fragment"><small>so it will be better if you are familiar with events, callbacks & promises</small></p>
+            <aside class="notes">
+              Some of those principles come together, creating design patterns, like for example SOLID:
+              <ul>
+                <li>SRP - Single Responsibility Principle, module/class should be responsible for one thing</li>
+                <li>OCP - open/close principle, module interface should be open to extension but closed to modification</li>
+                <li>LSP - Liskov Substitution Principle, any module should be substitutable by modules builded upon original one</li>
+                <li>ISP - Interface Segregation Principle, many client-specific interfaces are better then one general</li>
+                <li>DIP - Dependency Inversion Principle</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Documented code</h3>
+            <p class="fragment">Why I see you are all embraced?</p>
+            <p class="fragment">One of the most important habits, yet hardest to follow.</p>
+            <p></p>
+          </section>
+            <section>
+            <h3>Testable code</h3>
+            <p class="fragment">Embraced again?</p>
+            <p class="fragment">TDD, BDD... No mater how you name it. What is important
+            you will always write code you only need. Unit test will also warn anyone who will
+            try to brake your implementation.</p>
+            <p></p>
+          </section>
+        </section>
+        
+        <!-- -------------------------------- MODULES -------------------------------- -->
+        
+        <section>
+          <section>
+              <h5>Part II</h5>
+            <h1>Modules</h1>
+              <p><em>Improving maintainability with modules</em></p>
+          </section>
+          <section>
+            <h2>Principles of modularity</h2>
+            <ul>
+              <li class="fragment">specialized</li>
+              <li class="fragment">independent</li>
+              <li class="fragment">decomposable</li>
+              <li class="fragment">recomposable</li>
+              <li class="fragment">substitutable</li>
+            </ul>
+            <aside class="notes">
+              In computing and systems design a loosely coupled system is one in which each of its components has, 
+              or makes use of, little or no knowledge of the definitions of other separate components.<br>
+              <b>Specialized</b><br>
+              The module’s parts should be
+              integral to solving the single problem that the module exists to solve. The public
+              API should be simple and clean.<br>
+              <b>Independent</b><br>
+              Modules should know as little as possible about other modules. Instead of calling
+              other modules directly, they should communicate through mediators.<br>
+              <b>Decomposable</b><br>
+              It should be fairly simple to test and use modules in isolation from other modules.
+              <b>Recomposable</b><br>
+              It should be possible to fit various modules together in different ways to build a
+              different version of the same software or an entirely different application.<br>
+              <b>Substitutable</b><br>
+              It should be possible to completely substitute one module with another, as long is
+              it supplies the same interface. The rest of the application should not be adversely
+              impacted by the change.<br>
+              <i>The Open Closed Principle</i> states that a module interface should be
+              open to extension but closed to modification.
+            </aside>
+          </section>
+          <section>
+            <h2>No out of the box solution <span class="fragment">yet</span></h2>
+            <p class="fragment">but we can do this:</p>
+            <ul>
+              <li class="fragment">Object literal notation</li>
+              <li class="fragment">Module pattern</li>
+              <li class="fragment">CommonJS modules</li>
+              <li class="fragment">AMD modules</li>
+            </ul>
+            <aside class="notes">
+              There are no build in JS solutions we can use. However there are few design
+              patterns which will help to maintain project.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Object literal notation</h2>
+            <p class="fragment">
+              In JavaScript functions are first-class citizens and
+              we can make strong use of it.
+            </p>
+            <aside class="notes">
+              What is it, does anybody know?
+              <b>First-class citizen</b> is an entity which supports all the operations generally available to other entities.
+              These operations typically include being passed as a parameter, returned from a function, and assigned to a variable.
+            </aside>
+          </section>
+          <section>
+            <h3>Example</h3>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+var myCart = {
+
+  totalAmount: 0,
+
+  items: [],
+
+  placeholder: document.getElementById('#cart'),
+
+  addItem: function (item) {
+    this.items.push(item);
+    this.totalAmount += item.price;
   }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+};
+          </code></pre>
+          </section>
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Simple implementation</li>
+              <li>Relatively easy to create instances with <code>Object.create</code></li>
+            </ul>
+          </section>
+          <section>
+            <h3>Cons</h3>
+            <ul>
+              <li>No encapsulation, easy to overwrite property</li>
+              <li>Variables may leak</li>
+            </ul>
+          </section>
+        </section>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
+        <section>
+          <section>
+            <h2>Module pattern</h2>
+            <p class="fragment">
+              Lets add closure concept to the object notation.
+            </p>
+          </section>
+          <section>
+            <h3>Example</h3>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+var myCart = function () {
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
+  var totalAmount = 0,
+      items = [],
+      placeholder = document.getElementById('#cart');
 
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
+  return {
+    addItem: function (item) {
+      items.push(item);
+      totalAmount += item.price;
+    },
+    total: function () {
+      return totalAmount;
+    }
+  };
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
+};
+            </code></pre>
+            <p class="fragment">But what about dependencies?</p>
+          </section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
+          <section>
+            <h3>Inject dependencies</h3>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+var myCart = (function ($) {
 
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
+  return function cart() {
 
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+    var totalAmount = 0,
+        items = [],
+        placeholder = $('#cart');
 
-			</div>
+    return {
+      addItem: function (item) {
+        items.push(item);
+        totalAmount += item.price;
+      },
+      total: function () {
+        return totalAmount;
+      }
+    };
 
-		</div>
+  };
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+})(jQuery);
+            </code></pre>
+            <p class="fragment">How about automatic dependency resolution?</p>
+            <p class="fragment">Impossible without additional tools.</p>
+          </section>
 
-		<script>
+            <!--section>
+                <h3>Adding prototypal inheritance</h3>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+                var myCart = function () {
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+                var totalAmount = 0,
+                items = [],
+                placeholder = document.getElementById('#cart');
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                var prototype = {
+                addItem: function (item) {
+                items.push(item);
+                totalAmount += item.price;
+                },
+                total: function () {
+                return totalAmount;
+                }
+                };
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+                return Object.create(prototype);
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                };
+            </code></pre>
+                <p class="fragment">But what about dependencies?</p>
+            </section-->
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Clean and flexible model</li>
+              <li>Relatively easy to create instances</li>
+              <li>Encapsulation</li>
+              <li>Dependency injection</li>
+            </ul>
+            <aside class="notes">
+              This model is very flexible and can be used to build singletons, observers, etc.
+            </aside>
+          </section>
+          <section>
+            <h3>Cons</h3>
+            <ul>
+              <li>Methods added later cannot access privates</li>
+              <li>Hard to test private parts of module</li>
+              <li>No automatic dependency resolution</li>
+            </ul>
+          </section>
+        </section>
 
-		</script>
+        <section>
+          <h3>So what with this automatic dependency resolution?</h3>
+        </section>
+       
+        <section>
+         
+         
+          <section>
+            <h2>CommonJS modules</h2>
+            <p class="fragment">
+              <em>Modules/1.0</em>
+            </p>
+          </section>
+          <section>
+            <h3>CommonJS implementations</h3>
+            <ul>
+              <li>Node.js</li>
+              <li>CouchDB</li>
+              <li>RingoJS</li>
+              <li>many more...</li>
+            </ul>
+          </section>          
+          <section>
+            <h3>Example</h3>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+var $ = require('jquery');
 
-	</body>
+module.exports = function cart() {
+
+  var totalAmount = 0,
+      items = [],
+      placeholder = $('#cart');
+
+  var prototype = {
+    addItem: function (item) {
+      items.push(item);
+      totalAmount += item.price;
+    },
+    total: function () {
+      return totalAmount;
+    }
+  };
+
+  return Object.create(prototype);  
+
+};
+            </code></pre>
+            <p class="fragment">What about browser?</p>
+          </section>          
+        </section>       
+       
+        <section>
+          <section>
+            <h2>AMD modules</h2>
+            <p class="fragment">
+              <em>Modules/AsynchronousDefinition</em>
+            </p>
+            <small class="fragment">
+              Not a CommonJS project anymore
+            </small>
+          </section>
+          <section>
+            <h3>AMD API</h3>
+            <ul>
+              <li class="fragment"><code>define(id?, dependencies?, factory);</code></li>
+              <li class="fragment"><code>define.amd</code></li>
+              <li class="fragment"><code>require(dependencies, callback);</code></li>
+            </ul>
+          </section>
+          <section>
+            <h3>AMD libraries</h3>
+            <ul>
+              <li><a href="http://requirejs.org/">RequireJS</a></li>
+              <li><a href="https://github.com/cujojs/curl">curl.js</a></li>
+              <li><a href="https://github.com/kriszyp/nodules">Nodules</a></li>
+            </ul>
+          </section>
+          <section>
+            <h3>Example</h3>
+            <small>module.js</small>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+define('myCart', ['jQuery'], function ($) {
+
+  return function cart() {
+
+    var totalAmount = 0,
+        items = [],
+        placeholder = $('#cart');
+
+    var prototype = {
+      addItem: function (item) {
+        items.push(item);
+        totalAmount += item.price;
+      },
+      total: function () {
+        return totalAmount;
+      }
+    };
+
+    return Object.create(prototype);  
+
+  };
+
+});
+            </code></pre>
+            <small>app.js</small>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+require(['myCart'], function (myCart) {
+ 
+  var cart = myCart();
+  cart.addItem({price: 5});
+  
+});
+            </code></pre>
+          </section>
+          <section>
+            <h3>Compatibility</h3>
+            <ul>
+              <li><a href="https://github.com/amdjs/amdjs-api/wiki/jQuery-and-AMD">jQuery (as of 1.7+)</a></li>
+              <li><a href="http://requirejs.org/docs/api.html#config-shim">shim config</a></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>AMD + CommonJS</h2>
+            <h3>UMD</h3>
+            <p><em><a href="https://github.com/umdjs/umd">Universal Module Definition</a></em></p>
+          </section>
+          <section>
+            <h3>Example</h3>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+  } else if (typeof exports !== 'undefined') {
+    module.exports = factory();
+  }
+})(this, function () {
+  return function cart () {
+    // module body
+  };
+});              
+            </code></pre>
+            <p class="fragment">This will work in Node.js and in the browser<br>(with RequireJS for example).</p>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Feature</h2>
+            <h3 class="fragment">ECMAScript modules</h3>
+            <ul>
+              <li class="fragment">Will be implemented in ECMAScript 6 <i>Harmony</i><br>(aka. JavaScript.next or ES.next)</li>
+              <li class="fragment">Don't confuse with <code>class</code> - ES.next will have it too</li>
+              <li class="fragment">Still working draft...</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Example</h3>
+            <small>module.js</small>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+module Cart {
+  import something from otherModule 
+
+  var internalData;
+  
+  function internalFunction() {}
+ 
+  export function addItem(item) {}
+  export function total() {}
+}             
+            </code></pre>
+            <small>app.js</small>
+            <pre><code data-trim contenteditable spellcheck="false" class="javascript">
+import {addItem, total} from Cart;
+
+addItem({ptice: 5});
+            </code></pre>            
+          </section>
+          <section>
+            <h3><span style="text-decoration: line-through">Use</span> Test it today</h3>
+            <ul>
+              <li><a href="http://bit.ly/Tg5Ytz">Traceur demo</a></li>
+              <li><a href="https://github.com/jdiamond/harmonizr">Harmonizr</a></li>
+              <li><a href="https://github.com/jrburke/require-hm">Require HM</a></li>
+              <li><a href="https://github.com/addyosmani/es6-module-loader">ES6 Module Loader</a></li>
+            </ul>
+          </section>
+          <section>
+            <h3>Controversy</h3>
+            <p>Proposed solution is not compatible with currently adopted solutions like CommonJS or AMD.</p>
+          </section>
+        </section>
+        
+        <section>
+          <h2>Managing modules</h2>
+          <ul>
+            <li><a href="https://www.npmjs.org/">npm</a> - Node Packaged Modules</li>
+            <li><a href="http://bower.io/">Bower</a> - A package manager for the web</li>
+          </ul>
+        </section>
+        
+        <!-- -------------------------------- AUTOMATION -------------------------------- -->
+        
+        <section>
+          <section>
+              <h5>Part III</h5>
+            <h1>Automation</h1>
+              <p><em>Improve maintainability with automation</em></p>
+          </section>
+          <section>
+            <h2>Why?</h2>
+            <ul>
+                <li>Save you time</li>
+                <li>Focus on your code</li>
+                <li>Clean workflow</li>
+            </ul>
+              <aside class="notes">Clean workflow - any other developer can easily join without any need to learn how to
+                  build and test your code
+              </aside>
+          </section>
+          <section>
+            <h2>What?</h2>
+            <ul>
+              <li>Building deployment packages</li>
+              <li>Code analysis (code lint)</li>
+              <li>Unit tests and code coverage</li>
+              <li>Documentation update</li>
+            </ul>
+          </section>
+          <section>
+            <h2>When?</h2>
+            <ul>
+              <li>development</li>
+              <li>deployment</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Building deployment packages</h2>
+            <ul>
+              <li>
+                command line<br>
+                <pre><code data-trim contenteditable spellcheck="false" class="sh">npm install -g requirejs</code></pre>
+                <pre><code data-trim contenteditable spellcheck="false" class="sh">node r.js name=main out=main.js</code></pre>
+              </li>
+              <li>
+                automation tools<br>
+                Grunt: <a href="">grunt-contrib-requirejs</a><br>
+                Gulp: <a href="">gulp-requirejs</a>
+              </li>
+            </ul>
+          </section>
+        </section>        
+
+        <!-- -------------------------------- FIN -------------------------------- -->
+
+        <section>
+          <h2>Summary</h2>
+          <ul>
+            <li>Learn and spreed programing principles</li>
+            <li>Switch on asynchronous thinking</li>
+            <li>Know tools and solutions JavaScript has to offer</li>
+            <li>Write modules, use package manager</li>
+            <li>Automate what you can</li>
+          </ul>
+        </section>       
+
+        <section>
+          <h2>Any questions?</h2>
+        </section>
+       
+        <section>
+          <h2>The End</h2>
+          <p>Thank you for your attention!</p>
+        </section>
+        <section>
+          <h3>Bibliography</h3>
+          <ol>
+            <li><b><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">Learning JavaScript Design Patterns</a></b> by <i>Addy Osmani</i></li>
+            <li><b><a href="http://addyosmani.com/blog/a-few-new-things-coming-to-javascript/">A Few New Things Coming To JavaScript</a></b> by <i>Addy Osmani</i></li>
+            <li><b><a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">JavaScript Module Pattern: In-Depth</a></b> by <i>Ben Cherry</i></li>
+            <li><b>Maintainable JavaScript</b> by <i>Nicholas C. Zakas</i></li>
+            <li><b>Programming JavaScript Applications</b> by <i>Eric Elliott</i></li>
+            <li><b>JavaScript Patterns</b> by <i>Stoyan Stefanov</i></li>
+          </ol>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>

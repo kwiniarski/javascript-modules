@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript modules demo</title>
+  <link rel="stylesheet" href="bower_components/qunit/qunit/qunit.css">
+</head>
+<body>
+ 
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  
+  <script src="bower_components/qunit/qunit/qunit.js"></script>
+  <script src="bower_components/requirejs/require.js"></script>
+  
+  <script>
+    
+    // Preserve QUnit from autorun on page load.
+    QUnit.config.autostart = false;
+    
+    // Configure and run RequireJS
+    require.config({
+      baseUrl: '.',
+      paths: {
+        jquery: 'bower_components/jquery/dist/jquery' // <- no .js extension
+      },
+      deps: [
+        'main'
+      ],
+      callback: function () {
+        QUnit.start();
+      }
+    });
+    
+  </script>
+
+</body>
+</html>
